@@ -1,0 +1,32 @@
+Batalha de pokemon
+
+Pokemon: Lista
+
+Atributos do Pokemon:
+
+- Vida
+- Ataque (lista)
+  - Nome
+  - Tipo (lista)
+  - Dano
+  
+- Defesa (lista)
+  - Nome
+  - Tipo (lista)
+  - Recuperacao
+
+Ações do pokemon:
+Atacar
+Trocar
+
+
+Regras: 
+
+Cada jogador, pode no máximo batalhar com 2 pokemon, sendo sempre 1 por jogador no campo de batalha.
+O pokemon que foi substituido, pode voltar a campo a qualquer momento se houver ao menos uma jogada de ataque do pokemon atual após sua substituição.
+Cada jogador pode conter no maximom 4 pokemon na sua pokedex.
+Ganha o jogador que destuir todos os 2 pokemons do outro.
+Cada jogador tem um ataque por vez, ou seja intercalados.
+Cada pokemon pode conter uma unica esquiva na partida.
+Pode no máximo 2 ataques do mesmo tipo por pokemon na partida.
+A defesa só funciona com os mesmo tipos de ataque.
