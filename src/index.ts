@@ -1,5 +1,6 @@
 import { Atack } from './models/Atack';
 import { Defense } from './models/Defesa';
+import { Player } from './models/Player';
 import { Pokemon } from './models/Pokemon';
 import { PokemonType } from './types';
 
@@ -22,4 +23,22 @@ const Charizard = new Pokemon({
   defense: [Defesa],
 });
 
-console.log(Charizard);
+const Pikachu = new Pokemon({
+  name: 'Pikachu',
+  type: PokemonType.ELECTRIC,
+  atack: [Thunderbolt],
+  defense: [Defesa],
+});
+
+const player1 = new Player({
+  name: 'Ash',
+  pokemons: [Pikachu, Charizard],
+});
+
+const player2 = new Player({
+  name: 'Gary',
+  pokemons: [Charizard, Pikachu],
+});
+
+console.log(player1);
+console.log(player2);
