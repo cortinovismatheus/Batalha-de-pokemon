@@ -1,25 +1,52 @@
-import { PokemonType } from '../types';
+import { getPokemonTypeName } from '../definitions/pokemon-type-by-pokemon-name';
+import { PokemonName } from '../properties/pokemon-name';
+import { PokemonType } from '../properties/pokemon-types';
 import { Atack } from './Atack';
-import { Defense } from './Defesa';
+import { Defense } from './Defense';
 
 interface Props {
-  name: string;
+  name: PokemonName;
   type: PokemonType;
-  atack: Array<Atack>;
-  defense: Array<Defense>;
+  atacks: Array<Atack>;
+  defenses: Array<Defense>;
+}
+
+interface Create {
+  name: PokemonName;
+  atacks: Array<Atack>;
+  defenses: Array<Defense>;
 }
 
 export class Pokemon {
-  name: string;
+  name: PokemonName;
   type: PokemonType;
   life: number = 200;
-  atack: Array<Atack>;
-  defense: Array<Defense>;
+  atacks: Array<Atack>;
+  defenses: Array<Defense>;
 
-  constructor(data: Props) {
+  protected constructor(data: Props) {
     this.name = data.name;
     this.type = data.type;
-    this.atack = data.atack;
-    this.defense = data.defense;
+    this.atacks = data.atacks;
+    this.defenses = data.defenses;
+  }
+
+  static create(data: Create) {
+    const pokemonType = getPokemonTypeName(data.name);
+
+    data.atacks.forEach((atack) => {
+      if (pokemonType != atack.type) {
+        throw new Error(
+          `O ataque ${atack.name} é do tipo ${atack.type}, mas o pokemon é do tipo ${pokemonType}`,
+        );
+      }
+    });
+
+    return new Pokemon({
+      name: data.name,
+      type: pokemonType,
+      atacks: data.atacks,
+      defenses: data.defenses,
+    });
   }
 }

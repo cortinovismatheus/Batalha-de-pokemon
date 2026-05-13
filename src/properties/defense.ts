@@ -1,0 +1,15 @@
+export const enum DefenseName {
+  Growl = 'Growl',
+  LeechSeed = 'Leech Seed',
+  Projectile = 'Projectile',
+  PoisonPowder = 'Poison Powder',
+  SmokeScreen = 'Smoke Screen',
+  FocusEnergy = 'Focus Energy',
+  FlameCharge = 'Flame Charge',
+  Withdraw = 'Withdraw',
+  RainDance = 'Rain Dance',
+  MirrorCoat = 'Mirror Coat',
+  ThunderWave = 'Thunder Wave',
+  DoubleTeam = 'Double Team',
+  Agility = 'Agility',
+}

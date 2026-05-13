@@ -1,0 +1,17 @@
+export const enum AtackName {
+  VineWhip = 'Vine Whip',
+  RazorLeaf = 'Razor Leaf',
+  Tackle = 'Tackle',
+  SeedBomb = 'Seed Bomb',
+  Ember = 'Ember',
+  Flamethrower = 'Flamethrower',
+  Scratch = 'Scratch',
+  FIreFang = 'Fire Fang',
+  WaterGun = 'Water Gun',
+  Bubble = 'Bubble',
+  AquaTail = 'Aqua Tail',
+  ThundesBolt = 'Thunderbolt',
+  DubleTeam = 'Duble Team',
+  Projectile = 'Projectile',
+  Agility = 'Agility',
+}
