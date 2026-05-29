@@ -18,7 +18,19 @@ const pikachu = Pokemon.create({
   defenses: [Defense.create({ name: DefenseName.Growl, counter: 20 })],
 });
 
+const charmander = Pokemon.create({
+  name: PokemonName.Charmander,
+  atacks: [Atack.create({ name: AtackName.Ember, damage: 40 })],
+  defenses: [Defense.create({ name: DefenseName.SmokeScreen, counter: 20 })],
+});
+
+const bulbasaur = Pokemon.create({
+  name: PokemonName.Bulbasaur,
+  atacks: [Atack.create({ name: AtackName.VineWhip, damage: 40 })],
+  defenses: [Defense.create({ name: DefenseName.FocusEnergy, counter: 20 })],
+});
+
 export const misty = new Player({
   name: 'Misty',
-  pokemons: [pikachu, squirtle, pikachu],
+  pokemons: [pikachu, squirtle, charmander, bulbasaur],
 });
