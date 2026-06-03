@@ -23,6 +23,7 @@ export class Pokemon {
   life: number = 200;
   atacks: Array<Atack>;
   defenses: Array<Defense>;
+  died: boolean = false;
 
   protected constructor(data: Props) {
     this.name = data.name;
@@ -48,5 +49,34 @@ export class Pokemon {
       atacks: data.atacks,
       defenses: data.defenses,
     });
+  }
+
+  receiveAttack(atack: Atack) {
+    let damage = atack.damage;
+
+    if (atack.type === this.defenses[0].type) {
+      damage = Math.max(0, atack.damage - this.defenses[0].counter);
+
+      console.log(
+        `O ataque ${atack.name} foi parcialmente defendido! O dano original era ${atack.damage}, mas o Pokémon ${this.name} conseguiu reduzir para ${damage} usando ${this.defenses[0].name}.`,
+      );
+    } else {
+      console.log(
+        `O ataque ${atack.name} atingiu o Pokémon ${this.name} causando ${damage} de dano!`,
+      );
+    }
+
+    this.life -= damage;
+
+    console.log(`A vida restante do Pokémon ${this.name} é ${this.life}.`);
+
+    if (this.life <= 0) {
+      this.life = 0;
+      this.die();
+    }
+  }
+
+  die() {
+    this.died = true;
   }
 }

@@ -9,6 +9,7 @@ interface Props {
 
 interface Create {
   name: DefenseName;
+  type: PokemonType;
   counter: number;
 }
 
@@ -26,7 +27,7 @@ export class Defense {
   static create(data: Create) {
     return new Defense({
       name: data.name,
-      type: PokemonType.NORMAL,
+      type: data.type,
       counter: data.counter,
     });
   }
